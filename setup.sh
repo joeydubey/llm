@@ -11,4 +11,5 @@ pyinstaller --onefile --name llm myls.py
 
 cp dist/llm .
 
-rm -rf __pycache__ build dist llm.spec 
+rm -rf __pycache__ build dist llm.spec
+
