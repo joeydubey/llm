@@ -7,7 +7,7 @@ then
 	touch $filename
 fi
 
-pyinstaller --onefile --name llm myls.py
+pyinstaller --onefile --name llm main.py
 
 cp dist/llm .
 
