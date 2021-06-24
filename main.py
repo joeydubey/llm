@@ -23,7 +23,10 @@ def main():
     orders = sorted(orders)
     args = parse_args(argv[1:])
 
-    if args.command == 'create_order':
+    if not args.command:
+        print("No command received. Run \"llm -h\" to see usage.")
+    
+    elif args.command == 'create_order':
         new_order = Order(get_new_order_id(orders), args.origin, args.destination, False)
         orders.append(new_order)
         save("orders.csv", orders)
