@@ -7,7 +7,7 @@ def show_all_orders(orders):
 def show_available_orders(orders):
     for order in orders:
         if not order.is_taken():
-            order.show()
+            print(order.show())
 
 def exists(orders, id):
     dummy_order = Order(id, "", "", False)

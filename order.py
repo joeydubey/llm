@@ -34,4 +34,4 @@ class Order:
         self.taken = True
 
     def show(self):
-        print(f"{self.id},{self.origin},{self.destination}")
+        return(f"{self.id},{self.origin},{self.destination}")
