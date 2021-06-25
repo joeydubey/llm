@@ -1,8 +1,5 @@
 import unittest
-from io import StringIO
 from order import Order
-from orders import get_new_order_id
-from inout import load, save
 from main import parse_args, command
 
 o1 = Order(1, "DEL", "BOM", True)
@@ -68,11 +65,11 @@ class TestMain(unittest.TestCase):
     def test_command_list(self):
         args = parse_args("list_orders".split())
         test_output = command(test_orders, "test.csv", args)
-        self.assertEqual(test_output, "".join(
-            ["4,Kennedy Town,Sheung Wan\n",
-            "7,Hong Kong,Singapore\n",
-            "8,Sydney,Auckland\n",
-            "9,Tsing Yi,Tuen Mun\n",
+        self.assertEqual(test_output, "\n".join(
+            ["4,Kennedy Town,Sheung Wan",
+            "7,Hong Kong,Singapore",
+            "8,Sydney,Auckland",
+            "9,Tsing Yi,Tuen Mun",
             "10,TST,Central"]))
     
     def test_command_take(self):
