@@ -13,7 +13,7 @@ def load(file_name):
             orders.append(order)
     return orders
 
-def save(file_name, orders):
+def save(orders, file_name):
     with open(file_name, 'w') as file:
         file.write("id,from,to,taken\n")
         for order in orders:

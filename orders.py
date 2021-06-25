@@ -1,13 +1,16 @@
 from order import Order
 
-def show_all_orders(orders):
-    for order in orders:
-        print(order)
+def get_all_orders(orders):
+    #for order in orders:
+    #    print(order)
+    return [str(order) for order in orders]
 
-def show_available_orders(orders):
-    for order in orders:
-        if not order.is_taken():
-            print(order.show())
+def get_available_orders(orders):
+    #for order in orders:
+    #    if not order.is_taken():
+    #        #print(order.show())
+    #        return []
+    return [order.show() for order in orders if not order.is_taken()]
 
 def exists(orders, id):
     dummy_order = Order(id, "", "", False)
@@ -21,4 +24,4 @@ def get_order(orders, id):
 def get_new_order_id(orders):
     if not orders:
         return 1
-    return (1 + orders[-1].get_id())
+    return (1 + sorted(orders)[-1].get_id())
