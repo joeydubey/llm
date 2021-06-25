@@ -1,6 +1,6 @@
 import csv
 import ast
-from .order import Order
+from order import Order
 
 def load(file_name):
     orders = []

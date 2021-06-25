@@ -1,8 +1,8 @@
 import argparse
 from sys import argv
-from .order import Order
-from .orders import get_available_orders, exists, get_order, get_new_order_id
-from .inout import load, save
+from order import Order
+from orders import get_available_orders, exists, get_order, get_new_order_id
+from inout import load, save
 
 def parse_args(args):
     parser = argparse.ArgumentParser()
