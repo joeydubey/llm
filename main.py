@@ -53,7 +53,7 @@ def command(orders, file_name, args):
 def main():
     file_name = "orders.csv"
     orders = load(file_name)
-    #orders = sorted(orders)
+    orders = sorted(orders)
     output = command(orders, file_name, args = parse_args(argv[1:]))
     if output:
         print(output)
