@@ -25,7 +25,7 @@ def command(orders: List[Order], file_name: str, args: argparse.Namespace) -> st
         return "No command received. Run \"llm -h\" to see usage."
     
     elif args.command == 'create_order':
-        new_order = Order(get_new_order_id(orders), args.origin, args.destination, False)
+        new_order = Order(get_new_order_id(orders), args.origin, args.destination)
         orders.append(new_order)
         save(orders, file_name)
         return f"{getattr(new_order, 'id')}"

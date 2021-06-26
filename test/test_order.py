@@ -2,8 +2,8 @@ import unittest
 from order import Order
 
 o1 = Order(1, "DEL", "BOM", True)
-o2 = Order(7, "Hong Kong", "Singapore", False)
-o3 = Order(4, "Kennedy Town", "Sheung Wan", False)
+o2 = Order(7, "Hong Kong", "Singapore")
+o3 = Order(4, "Kennedy Town", "Sheung Wan")
 
 class TestOrder(unittest.TestCase):
     def test_string_rep(self):
@@ -31,11 +31,11 @@ class TestOrder(unittest.TestCase):
         setattr(temp_o1, "taken", False)
         self.assertEqual(getattr(temp_o1, "taken"), False)
 
-        temp_o2 = Order(9, "C", "D", False)
+        temp_o2 = Order(9, "C", "D")
         setattr(temp_o2, "taken", True)
         self.assertEqual(getattr(temp_o2, "taken"), True)
 
-        temp_o3 = Order(10, "E", "F", False)
+        temp_o3 = Order(10, "E", "F")
         setattr(temp_o3, "taken", True)
         self.assertEqual(getattr(temp_o3, "taken"), True)
 

@@ -11,7 +11,7 @@ def get_available_orders(orders: List[Order]) -> List[str]:
     #    if not order.is_taken():
     #        #print(order.show())
     #        return []
-    return [order.show() for order in orders if not order.is_taken()]
+    return [order.show() for order in orders if not getattr(order, "taken")]
 
 def get_order(orders: List[Order], id: int) -> Order:
     for order in orders:
