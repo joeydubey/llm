@@ -3,8 +3,9 @@ from sys import argv
 from order import Order
 from orders import get_available_orders, get_order, get_new_order_id
 from inout import load, save
+from typing import List
 
-def parse_args(args):
+def parse_args(args: List[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     subparser = parser.add_subparsers(dest='command')
     
@@ -18,7 +19,7 @@ def parse_args(args):
     take_order.add_argument('id', type=int)
     return parser.parse_args(args)
 
-def command(orders, file_name, args):
+def command(orders: List[Order], file_name: str, args: argparse.Namespace) -> str:
 
     if not args.command:
         return "No command received. Run \"llm -h\" to see usage."
@@ -31,16 +32,9 @@ def command(orders, file_name, args):
 
     elif args.command == 'list_orders':
         available_orders = get_available_orders(orders)
-        orders_to_show = ""
-        for order_to_show in available_orders:
-            if available_orders.index(order_to_show) == len(available_orders)-1:
-                orders_to_show += f"{order_to_show}"
-            else:
-                orders_to_show += f"{order_to_show}\n"
-        return orders_to_show
+        return "\n".join(available_orders)
         
     elif args.command == 'take_order':
-        #if not exists(orders, args.id):
         if not get_order(orders, args.id):
             return f"Error: order ID {args.id} does not exist."
         else:
