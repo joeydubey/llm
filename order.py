@@ -55,6 +55,7 @@ class Order:
         Determines if the order is less than (<) another given order.
         The order is less than another order if its "id" attribute is smaller
         than the other order's "id" attribute.
+        Returns True if so, otherwise returns False.
 
         Parameters
         ----------
@@ -69,6 +70,7 @@ class Order:
         Determines if the order is greater than (>) another given order.
         The order is greater than another order if its "id" attribute is larger
         than the other order's "id" attribute.
+        Returns True if so, otherwise returns False.
 
         Parameters
         ----------
@@ -83,6 +85,7 @@ class Order:
         Determines if the order is less than or equal to (<=) another given order.
         The order is less than or equal to another order if its "id" attribute
         is smaller than or equal to the other order's "id" attribute.
+        Returns True if so, otherwise returns False.
 
         Parameters
         ----------
@@ -98,6 +101,7 @@ class Order:
         another given order.
         The order is greater than or equal to another order if its "id" attribute
         is larger than or equal to the other order's "id" attribute.
+        Returns True if so, otherwise returns False.
 
         Parameters
         ----------
@@ -112,6 +116,7 @@ class Order:
         Determines if the order is equal to (=) another given order.
         The order is equal to another order if its "id" attribute is equal to
         the other order's "id" attribute.
+        Returns True if so, otherwise returns False.
 
         Parameters
         ----------
