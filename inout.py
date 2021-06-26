@@ -1,8 +1,9 @@
 import csv
 import ast
 from order import Order
+from typing import List
 
-def load(file_name: str) -> list[Order]:
+def load(file_name: str) -> List[Order]:
     orders = []
     try:
         with open(file_name, 'r') as file:
