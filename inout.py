@@ -22,7 +22,7 @@ def load(file_name: str) -> List[Order]:
     
     return orders
 
-def save(orders: list[Order], file_name: str) -> None:
+def save(orders: List[Order], file_name: str) -> None:
     with open(file_name, 'w') as file:
         file.write("id,from,to,taken\n")
         for order in orders:
