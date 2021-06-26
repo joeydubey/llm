@@ -1,7 +1,7 @@
 import argparse
 from sys import argv
 from order import Order
-from orders import get_available_orders, exists, get_order, get_new_order_id
+from orders import get_available_orders, get_order, get_new_order_id
 from inout import load, save
 
 def parse_args(args):
@@ -40,7 +40,8 @@ def command(orders, file_name, args):
         return orders_to_show
         
     elif args.command == 'take_order':
-        if not exists(orders, args.id):
+        #if not exists(orders, args.id):
+        if not get_order(orders, args.id):
             return f"Error: order ID {args.id} does not exist."
         else:
             if not get_order(orders, args.id).is_taken():
