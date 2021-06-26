@@ -46,23 +46,23 @@ def load(file_name: str) -> List[Order]:
         
     """
     orders = []
-    try:
+    try: #try to open file to read
         with open(file_name, 'r') as file:
             reader = csv.DictReader(file)
-            try:
+            try: #try to read column headings
                 for row in reader:
-                    id = ast.literal_eval(row['id'])
-                    taken = ast.literal_eval(row['taken'])
+                    id = ast.literal_eval(row['id']) #evaluate as integer instead of string
+                    taken = ast.literal_eval(row['taken']) #evaluate as bool instead of string
                     order = Order(id, row["from"], row["to"], taken)
                     orders.append(order)
-            except KeyError:
+            except KeyError: #could not read column headings
                 print(f"Error: could not read file: \"{file_name}\".")
-                print("Invalid column headings.")
+                print("Unable to read column headings.")
                 print(f"Overwriting the required file \"{file_name}\" for future runs")
                 print("with correct column headings: (id, from, to, taken).")
                 save(orders, file_name)
 
-    except IOError:
+    except IOError: #could not read file
         print(f"Error: could not read file: \"{file_name}\".")
         print(f"Creating the required file \"{file_name}\" for future runs.")
         save(orders, file_name)
@@ -91,8 +91,8 @@ def save(orders: List[Order], file_name: str) -> None:
     """
     try:
         with open(file_name, 'w') as file:
-            file.write("id,from,to,taken\n")
+            file.write("id,from,to,taken\n") #write column headings
             for order in orders:
                 file.write(f"{order}\n")
-    except IOError:
+    except IOError: #could not write file
         print(f"Error: could not write file: \"{file_name}\".")

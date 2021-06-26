@@ -86,11 +86,6 @@ def get_new_order_id(orders: List[Order]) -> int:
     orders: List[Order]
         the list of orders for which the new order "id" is to be generated
     
-    Returns
-    -------
-    _____: int
-        the new order "id" generated
-    
     """
     if not orders: #list of orders is empty
         return 1 #"id" 1 is unique for empty list
