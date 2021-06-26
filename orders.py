@@ -18,6 +18,7 @@ get_order(orders: List[Order], id: int) -> Order
 get_new_order_id(orders: List[Order]) -> int
     generates a unique order "id" to allot to a new order being added to a
     list of orders
+
 """
 
 from order import Order
@@ -32,6 +33,7 @@ def get_all_orders(orders: List[Order]) -> List[str]:
     ----------
     orders: List[Order]
         the list of orders for which string representations are to be generated
+    
     """
     return [str(order) for order in orders]
 
@@ -44,6 +46,7 @@ def get_available_orders(orders: List[Order]) -> List[str]:
     ----------
     orders: List[Order]
         the list of orders for which string representations are to be generated
+    
     """
     return [order.show() for order in orders if not getattr(order, "taken")]
 
@@ -59,6 +62,12 @@ def get_order(orders: List[Order], id: int) -> Order:
     
     id: int
         the order "id" to look for
+    
+    Returns
+    -------
+    order: Order
+        the order to be retrieved
+    
     """
     for order in orders:
         if getattr(order, "id") == id:
@@ -76,6 +85,11 @@ def get_new_order_id(orders: List[Order]) -> int:
     ----------
     orders: List[Order]
         the list of orders for which the new order "id" is to be generated
+    
+    Returns
+    -------
+    _____: int
+        the new order "id" generated
     
     """
     if not orders: #list of orders is empty

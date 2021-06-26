@@ -55,13 +55,16 @@ class Order:
         Determines if the order is less than (<) another given order.
         The order is less than another order if its "id" attribute is smaller
         than the other order's "id" attribute.
-        Returns True if so, otherwise returns False.
 
         Parameters
         ----------
         obj: Order
             the other order that the current order is to be compared to.
-        
+
+        Returns
+        -------
+        True if so, otherwise False
+
         """
         return ((self.id) < (obj.id))
     
@@ -77,6 +80,10 @@ class Order:
         obj: Order
             the other order that the current order is to be compared to.
         
+        Returns
+        -------
+        True if so, otherwise False
+
         """
         return ((self.id) > (obj.id))
     
@@ -92,6 +99,10 @@ class Order:
         obj: Order
             the other order that the current order is to be compared to.
         
+        Returns
+        -------
+        True if so, otherwise False
+
         """
         return ((self.id) <= (obj.id))
     
@@ -108,6 +119,10 @@ class Order:
         obj: Order
             the other order that the current order is to be compared to.
         
+        Returns
+        -------
+        True if so, otherwise False
+        
         """
         return ((self.id) >= (obj.id))
     
@@ -122,6 +137,10 @@ class Order:
         ----------
         obj: Order
             the other order that the current order is to be compared to.
+        
+        Returns
+        -------
+        True if so, otherwise False
         
         """
         return (self.id == obj.id)
