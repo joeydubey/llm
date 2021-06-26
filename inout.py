@@ -2,7 +2,7 @@ import csv
 import ast
 from order import Order
 
-def load(file_name):
+def load(file_name: str) -> list[Order]:
     orders = []
     try:
         with open(file_name, 'r') as file:
@@ -21,7 +21,7 @@ def load(file_name):
     
     return orders
 
-def save(orders, file_name):
+def save(orders: list[Order], file_name: str) -> None:
     with open(file_name, 'w') as file:
         file.write("id,from,to,taken\n")
         for order in orders:
