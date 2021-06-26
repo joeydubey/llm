@@ -28,9 +28,6 @@ class Order:
     def __str__(self) -> str:
         return f"{self.id},{self.origin},{self.destination},{self.taken}"
 
-    def get_id(self) -> int:
-        return self.id
-
     def is_taken(self) -> bool:
         return self.taken
     

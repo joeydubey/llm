@@ -15,10 +15,10 @@ def get_available_orders(orders: List[Order]) -> List[str]:
 
 def get_order(orders: List[Order], id: int) -> Order:
     for order in orders:
-        if order.get_id() == id:
+        if getattr(order, "id") == id:
             return order
 
 def get_new_order_id(orders: List[Order]) -> int:
     if not orders:
         return 1 
-    return (1 + max(orders).get_id())
+    return (1 + getattr(max(orders), "id"))

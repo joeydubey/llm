@@ -28,7 +28,7 @@ def command(orders: List[Order], file_name: str, args: argparse.Namespace) -> st
         new_order = Order(get_new_order_id(orders), args.origin, args.destination, False)
         orders.append(new_order)
         save(orders, file_name)
-        return f"{new_order.get_id()}"
+        return f"{getattr(new_order, 'id')}"
 
     elif args.command == 'list_orders':
         available_orders = get_available_orders(orders)
@@ -38,8 +38,8 @@ def command(orders: List[Order], file_name: str, args: argparse.Namespace) -> st
         if not get_order(orders, args.id):
             return f"Error: order ID {args.id} does not exist."
         else:
-            if not get_order(orders, args.id).is_taken():
-                get_order(orders, args.id).take()
+            if not getattr(get_order(orders, args.id), "taken"):
+                setattr(get_order(orders, args.id), "taken", True)
                 save(orders, file_name)
                 return ""
             else:
