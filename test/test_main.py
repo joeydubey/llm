@@ -46,10 +46,6 @@ class TestMain(unittest.TestCase):
         self.assertEqual(args.command, None)
 
     def test_command_create(self):
-        args = parse_args("".split())
-        test_output = command(test_orders, "test.csv", args)
-        self.assertEqual(test_output, "No command received. Run \"llm -h\" to see usage.")
-
         args = parse_args("create_order Sydney Auckland".split())
         test_output = command(test_orders, "test.csv", args)
         self.assertEqual(test_output, "8")
@@ -88,7 +84,7 @@ class TestMain(unittest.TestCase):
     def test_command_empty(self):
         args = parse_args("".split())
         test_output = command(test_orders, "test.csv", args)
-        self.assertEqual(test_output, "No command received. Run \"llm -h\" to see usage.")
+        self.assertEqual(test_output, "No command received. Run \"./llm -h\" to see usage.")
 
 
 if __name__ == '__main__':

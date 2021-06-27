@@ -20,6 +20,7 @@ class Order:
     -------
     show() -> str
         returns a formatted string representation of the order
+    
     """
     id: int
     origin: str

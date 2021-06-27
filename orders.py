@@ -3,7 +3,6 @@ A module that implements helper functions to supplement the Order class
 
 Methods
 -------
-
 get_all_orders(orders: List[Order]) -> List[str]
     returns a list of formatted string representations of
     all orders in a list of orders

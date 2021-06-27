@@ -4,7 +4,6 @@ program by implementing loading orders from and saving orders to disk.
 
 Methods
 -------
-
 load(file_name: str) -> List[Order]
     reads all of the orders from the specified file
 
