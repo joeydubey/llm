@@ -10,8 +10,9 @@ test_orders = sorted([o1, o2, o3])
 
 class TestMain(unittest.TestCase):
     """
-    A class used to perform unit testing and integration testing
-    for the main module.
+    A class used to perform unit testing for the main module
+    and integration testing for the all the program modules.
+    
     Extends the TestCase class from the unittest module.
     
     Methods
