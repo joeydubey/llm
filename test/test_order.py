@@ -8,7 +8,7 @@ o3 = Order(4, "Kennedy Town", "Sheung Wan")
 
 class TestOrder(unittest.TestCase):
     """
-    A class used to performing unit testing on an Order.
+    A class used to perform unit testing for the Order class.
     Extends the TestCase class from the unittest module.
     
     Methods
