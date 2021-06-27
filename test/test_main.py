@@ -137,7 +137,7 @@ class TestMain(unittest.TestCase):
 
         args = parse_args("take_order 1".split())
         test_output = command(test_orders, "test.csv", args)
-        self.assertEqual(test_output, "Order ID 1 is already taken. No changes made.")
+        self.assertEqual(test_output, "Error: order ID 1 is already taken. No changes made.")
 
         args = parse_args("take_order 50".split())
         test_output = command(test_orders, "test.csv", args)
@@ -150,7 +150,7 @@ class TestMain(unittest.TestCase):
         """
         args = parse_args("".split())
         test_output = command(test_orders, "test.csv", args)
-        self.assertEqual(test_output, "No command received. Run \"./llm -h\" to see usage.")
+        self.assertEqual(test_output, "Error: no arguments received. Run \"./llm -h\" to see usage.")
 
 
 if __name__ == '__main__':
