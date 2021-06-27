@@ -51,7 +51,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
     subparser = parser.add_subparsers(
         dest='command',
         description="Receive a command from the user and take the appropriate action",
-        metavar="[create_order|list_orders|take_order]\n"
+        metavar="[create_orderlist_orders|take_order]\n"
     )
     
     create_order = subparser.add_parser('create_order', help="Create a new order")
@@ -101,7 +101,7 @@ def command(orders: List[Order], file_name: str, parsed_args: argparse.Namespace
 
     """
     if not parsed_args.command: #No command received
-        output = f"No command received. Run \"./llm -h\" to see usage."
+        output = f"Error: no arguments received. Run \"./llm -h\" to see usage."
     
     elif parsed_args.command == 'create_order':
         #generate the new order
@@ -127,7 +127,7 @@ def command(orders: List[Order], file_name: str, parsed_args: argparse.Namespace
                 save(orders, file_name)
                 output = ""
             else: #order already taken
-                output = f"Order ID {parsed_args.id} is already taken. No changes made."
+                output = f"Error: order ID {parsed_args.id} is already taken. No changes made."
     
     return output
 
