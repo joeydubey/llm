@@ -20,7 +20,7 @@ The program can take the following commands:
 
 `create_order [from] [to]`
 Returns a unique ID for this order.
-from and to are required arguments.
+`from` and `to` are required arguments.
 
 `list_orders`
 Lists all the available (non-taken) orders in the format
@@ -29,7 +29,7 @@ Lists all the available (non-taken) orders in the format
 `take_order [id]`
 Takes the order with the given unique ID.
 Displays an error if the order is already taken or if it does not exist.
-id is a required argument.
+`id` is a required argument.
 
 `-h || --help`
 Displays a help message describing the program features and usage. 
@@ -51,7 +51,7 @@ Error: order ID 2 is already taken. No changes made.
 $ ./llm take_order 3
 Error: order ID 3 does not exist.
 $ ./llm
-Error: no arguments received. Run \"./llm -h\" to see usage.
+Error: no arguments received. Run "./llm -h" to see usage.
 ```
 
 ## Testing
